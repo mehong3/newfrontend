@@ -9,13 +9,13 @@
               <div class="text-siswa">
                 <p style="margin-bottom: 0;">{{jadwalId.nama}}</p>
                 <!-- <span class="pelajaran" @click="redirectToPelajaran">{{pelajaran}}</span> -->
+                <p style="font-weight: 400; font-size: 1vw;">{{jadwalId.pelajaran.nama}}</p>
                 <p style="font-weight: 400; font-size: 1vw;">{{jadwalId.tanggal}}</p>
-                <p style="font-weight: 400; font-size: 1vw;">{{jadwalId.tempat}}</p>
                 <p style="font-weight: 400; font-size: 1vw;">{{jadwalId.mulai}}-{{jadwalId.selesai}}</p>
-                <div class="button">
+                <!-- <div class="button">
                   <b-button variant="danger" id="gaguna">Tombol</b-button> 
                   <b-button variant="success" style="margin-left: 0.5vw" id="gaguna">Tombol</b-button>
-                </div>
+                </div> -->
               </div>
             </div>
             <div class="info-jdwl-pel">

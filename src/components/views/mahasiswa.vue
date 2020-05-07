@@ -9,13 +9,13 @@
           <!-- /.box-header -->
           <div class="box-body">
             <div class="dataTables_wrapper form-inline dt-bootstrap" id="example1_wrapper">
-              <div class="row">
+              <!-- <div class="row">
                 <div class="col-sm-6">
                   <div id="example1_length" class="dataTables_length">
 
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               
               <div class="row">
@@ -26,7 +26,7 @@
                         <tr role="row">
                             <th aria-label="Photo: activate to sort column ascending" style="width: 10px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting"></th>
                             <th aria-label="Nama: activate to sort column descending" aria-sort="ascending" style="width: 167px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting_asc">Nama</th>
-                            <th aria-label="RFID: activate to sort column ascending" style="width: 207px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">RFID</th>
+                            <th aria-label="Gender: activate to sort column descending" aria-sort="ascending" style="width: 167px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting_asc">Jenis Kelamin</th>
                             <th aria-label="NIM: activate to sort column ascending" style="width: 182px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">NIM</th>
                         </tr>
                       </thead>
@@ -34,7 +34,7 @@
                         <tr class="even" role="row" v-for='mahasiswa in filteredMahasiswa' :key='mahasiswa.nama' v-on:click='changeMahasiswaId(mahasiswa._id)'>
                             <td class="gambar"><img style="border-radius: 50%; height: 50px;" src="\static\img\stock\user1-128x128.jpg" alt="foto" /></td>
                             <td class="sorting_1">{{mahasiswa.nama}}</td>
-                            <td>{{mahasiswa.rfid}}</td>
+                            <td>{{mahasiswa.gender ? 'Perempuan' : 'Laki-laki'}}</td>
                             <td>{{mahasiswa.nim}}</td>
                         </tr>
                       </tbody>

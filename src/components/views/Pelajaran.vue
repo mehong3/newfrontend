@@ -24,6 +24,7 @@
                     <table aria-describedby="example1_info" role="grid" id="example1" class="table table-bordered table-striped dataTable">
                       <thead>
                         <tr role="row">
+                          <th aria-label="Foto: activate to sort column ascending" style="width: 50px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting"></th>
                           <th aria-label="Nama: activate to sort column ascending" style="width: 200px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Nama Pelajaran</th>
                           <th aria-label="Guru: activate to sort column descending" aria-sort="ascending" style="width: 167px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting_asc">Guru</th>
                           <th aria-label="Mahasiswa: activate to sort column ascending" style="width: 207px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Jenis Kelamin</th>
@@ -31,6 +32,7 @@
                       </thead>
                       <tbody>
                         <tr class="even" role="row" v-for='pelajaran in filteredPelajarans' :key='pelajaran.nama' v-on:click='changePelajaranId(pelajaran._id)'>
+                          <td class="gambar"><img style="border-radius: 50%; height: 50px;" src="\static\img\stock\user1-128x128.jpg" alt="foto" /></td>
                           <td>{{pelajaran.nama}}</td>
                           <td>{{pelajaran.guru}}</td>
                           <td>{{pelajaran.female ? 'Perempuan' : 'Laki-laki'}}</td>

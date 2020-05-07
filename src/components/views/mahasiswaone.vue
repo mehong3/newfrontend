@@ -29,15 +29,6 @@
                    <b>{{form.female?'Perempuan':'Laki-laki'}}</b>
                   </b-form-checkbox>
                 </b-form-group>
-                
-                <b-form-group id="input-group-3" label="RFID:" label-for="input-3">
-                  <b-form-input
-                    id="input-3"
-                    v-model="form.rfid"
-                    required
-                    placeholder="Masukan RFID"
-                  ></b-form-input>
-                </b-form-group>
 
                 <b-form-group id="input-group-4" label="NIM:" label-for="input-4">
                   <b-form-input
@@ -66,19 +57,6 @@
                   ></b-form-input>
                 </b-form-group>
  -->
-                <div >
-                  <b-form-group id="input-group-5" label="Foto:" label-for="input-5">
-                  <!-- Styled -->
-                  <b-form-file
-                    v-model="file"
-                    :state="Boolean(file)"
-                    placeholder="Masukan Foto"
-                    drop-placeholder="Masukan Foto Murid"
-                  ></b-form-file>
-                  <div class="mt-3">file: {{ file }}</div>
-                  </b-form-group>
-                </div>
-
                 <div class="button">
                   <b-button type="reset" variant="danger">Reset</b-button> 
                   <b-button type="submit" variant="success" style="margin-left: 0.5vw">Submit</b-button>
@@ -113,9 +91,7 @@ export default {
       form: {
         nama: '',
         female: false,
-        rfid: '',
         nim: '',
-        file: null,
         pelajarans: [],
         jadwals: []
       },
@@ -124,22 +100,24 @@ export default {
     }
   },
   methods: {
-    onSubmit(evt) {
+    async onSubmit(evt) {
       this.form.file = this.file
       evt.preventDefault()
       // alert(JSON.stringify(this.form))
-      var res = api.addMahasiswa(this.form)
-      console.log(res)
-      this.$router.push({ name: 'Mahasiswa Finish' })
+      // var res = api.addMahasiswa(this.form)
+      console.log('================')
+      await api.addMahasiswa(this.form).then((data) => {
+        console.log(data)
+        this.$store.dispatch('changeMahasiswaId', data._id)
+        this.$router.push({name: 'Data Siswa'})
+      })
     },
     onReset(evt) {
       evt.preventDefault()
       // Reset our form values
       this.form.nama = ''
       this.form.female = null
-      this.form.rfid = ''
       this.form.nim = ''
-      this.file = null
       // Trick to reset/clear native browser form validation state
       this.show = false
       this.$nextTick(() => {

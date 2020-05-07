@@ -10,10 +10,6 @@
                 <p>{{pelajaranId.nama}}</p>
                 <p style="font-weight: 400; font-size: 1.2vw;">{{pelajaranId.guru}}</p>
                 <p style="font-weight: 400; font-size: 1.2vw;">{{pelajaranId.female ? 'Perempuan' : 'Laki-laki'}}</p>
-                <div class="button">
-                  <b-button variant="danger" id="gaguna">Tombol</b-button> 
-                  <b-button variant="success" style="margin-left: 0.5vw" id="gaguna">Tombol</b-button>
-                </div>
               </div>
             </div>
             <div class="info-jdwl-pel">

@@ -9,11 +9,6 @@
               <div class="text-siswa">
                 <p>{{mahasiswaId.nama}}</p>
                 <p style="font-weight: 400; font-size: 1.2vw;">NIM:{{mahasiswaId.nim}}</p>
-                <p style="font-weight: 400; font-size: 1.2vw;">RFID:{{mahasiswaId.rfid}}</p>
-                <div class="button">
-                  <b-button variant="danger" id="gaguna">Tombol</b-button> 
-                  <b-button variant="success" style="margin-left: 0.5vw" id="gaguna">Tombol</b-button>
-                </div>
               </div>
             </div>
             <div class="info-jdwl-pel">
@@ -31,7 +26,7 @@
                         id="cards"
                       >
                         <b-card-text>
-                          Tanggal {{jadwal.tanggal}} <br> Pukul {{jadwal.mulai}}-{{jadwal.selesai}} <br> Di {{jadwal.tempat}}
+                          Tanggal {{jadwal.tanggal}} <br> Pukul {{jadwal.mulai}}-{{jadwal.selesai}} <br>
                         </b-card-text>
                       </b-card> 
                       </b-card-group>

@@ -25,11 +25,12 @@
                           <tr role="row">
                             <th aria-label="ID: activate to sort column ascending" style="width: 200px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">ID</th>
                             <th aria-label="Tanggal: activate to sort column descending" aria-sort="ascending" style="width: 167px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting_asc">Tanggal</th>
-                            <th aria-label="Mulai: activate to sort column ascending" style="width: 207px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Nama</th>
-                            <th aria-label="Selesai: activate to sort column ascending" style="width: 182px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Tanggal</th>
-                            <th aria-label="Pelajaran: activate to sort column ascending" style="width: 182px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Waktu Mulai</th>
-                            <th aria-label="Mahasiswa: activate to sort column ascending" style="width: 182px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Waktu Selesai</th>
-                            <th aria-label="Mahasiswa: activate to sort column ascending" style="width: 182px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Tempat</th>
+                            <th aria-label="Nama: activate to sort column ascending" style="width: 207px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Nama</th>
+                            <th aria-label="Nama Pelajaran: activate to sort column ascending" style="width: 207px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Nama Pelajaran</th>
+                            <th aria-label="Tanggal: activate to sort column ascending" style="width: 182px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Tanggal</th>
+                            <th aria-label="Mulai: activate to sort column ascending" style="width: 182px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Waktu Mulai</th>
+                            <th aria-label="Selesai: activate to sort column ascending" style="width: 182px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Waktu Selesai</th>
+                            <th aria-label="Tempat: activate to sort column ascending" style="width: 182px;" colspan="1" rowspan="1" aria-controls="example1" tabindex="0" class="sorting">Tempat</th>
                           </tr>
                         </thead>
                         <tbody>
@@ -37,6 +38,7 @@
                             <td class="gambar"><img style="border-radius: 50%; height: 50px;" src="\static\img\stock\user1-128x128.jpg" alt="foto" /></td>
                             <td class="sorting_1">{{jadwal.tanggal}}</td>
                             <td>{{jadwal.nama}}</td>
+                            <td>{{jadwal.pelajaran.nama}}</td>
                             <td>{{jadwal.tanggal}}</td>
                             <td>{{jadwal.mulai}}</td>
                             <td>{{jadwal.selesai}}</td>
@@ -82,6 +84,7 @@ export default {
   data() {
     return {
       jadwals: [],
+      pelajarans: [],
       search: ''
     }
   },

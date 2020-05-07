@@ -41,9 +41,9 @@
                           style="padding-left: 50%; padding-top: 50%; transform: translate(20%,-50%);"
                           >
                         </b-form-checkbox>
-                        <td  @click="redirect" class="gambar" id="femaleimage"><img style="border-radius: 50%; height: 50px;" :src="pelajaran.female ? '\\static\\img\\stock\\user2-128x128.jpg' : '\\static\\img\\stock\\user1-128x128.jpg'" alt="foto" id="genderCell"/></td>
-                        <td  @click="redirect" class="sorting_1">{{pelajaran.nama}}</td>
-                        <td @click="redirect">{{pelajaran.guru}}</td>
+                        <td class="gambar" id="femaleimage"><img style="border-radius: 50%; height: 50px;" :src="pelajaran.female ? '\\static\\img\\stock\\user2-128x128.jpg' : '\\static\\img\\stock\\user1-128x128.jpg'" alt="foto" id="genderCell"/></td>
+                        <td class="sorting_1">{{pelajaran.nama}}</td>
+                        <td>{{pelajaran.guru}}</td>
                         <td id="genderType" @click="redirect">{{pelajaran.female?'Perempuan':'Laki-laki'}}</td>
                       </tr>
                     </tbody>

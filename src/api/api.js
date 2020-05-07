@@ -58,10 +58,11 @@ export default {
 
     var mutation = `mutation{ addMahasiswa(
       nama: "${data.nama}", 
+      gender: ${data.female},
       nim: "${data.nim}",
       rfid: "${data.rfid}",
       pelajarans: ${pelajarans},
-      jadwals: ${jadwals}){ nama nim }}`
+      jadwals: ${jadwals}){ nama nim _id }}`
     // console.log(mutation)
     return this.execute(queryType.MUTATION, mutation)
   },
@@ -72,6 +73,7 @@ export default {
         nama
         nim 
         rfid
+        gender
       }
     }`
     return this.execute(queryType.QUERY, query)
@@ -156,6 +158,9 @@ export default {
         mulai 
         selesai
         tempat
+        pelajaran {
+          nama
+        }
       }
     }`
     return this.execute(queryType.QUERY, query)
