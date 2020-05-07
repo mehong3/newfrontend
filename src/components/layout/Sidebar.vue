@@ -5,22 +5,22 @@
     <section class="sidebar">
 
       <!-- Sidebar user panel (optional) -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img :src="user.avatar" />
+      <div>
+        <div >
+          <img style="width:60%; margin-left:0%;" src="../../../static/img/logo_kyra.png" />
         </div>
-        <div class="pull-left info">
+        <!-- <div class="pull-left info">
           <div>
             <p class="white">{{user.displayName}}</p>
           </div>
           <a href="javascript:;">
             <i class="fa fa-circle text-success"></i> Online
           </a>
-        </div>
+        </div> -->
       </div>
 
       <!-- search form (Optional) -->
-      <form v-on:submit.prevent class="sidebar-form" id="searchForm">
+      <!-- <form v-on:submit.prevent class="sidebar-form" id="searchForm">
         <div class="input-group" id="searchContainer">
           <span class="input-group-btn">
             <input type="text"
@@ -35,7 +35,7 @@
             </button>
           </span>
         </div>
-      </form>
+      </form> -->
       <!-- /.search form -->
 
       <!-- Sidebar Menu -->

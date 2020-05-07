@@ -1,12 +1,12 @@
 <template>
   <ul class="sidebar-menu">
     <li class="header">TOOLS</li>
-    <router-link tag="li" class="pageLink" to="/">
+    <!-- <router-link tag="li" class="pageLink" to="/">
       <a>
         <i class="fa fa-desktop"></i>
         <span class="page">Laman Utama</span>
       </a>
-    </router-link>
+    </router-link> -->
 
     <router-link tag="li" class="pageLink" to="/mahasiswa">
       <a>
@@ -82,7 +82,7 @@
       </a>
     </router-link> -->
     
-     <li class="treeview">
+     <!-- <li class="treeview">
       <a href="#">
         <i class="fa fa-folder-o"></i>
         <span class="treeview-title">Files</span>
@@ -111,9 +111,9 @@
           </a>
         </li>
       </ul>
-    </li>
+    </li> -->
 
-    <li class="header">ME</li>
+    <!-- <li class="header">ME</li>
     <router-link tag="li" class="pageLink" to="/tasks">
       <a>
         <i class="fa fa-tasks"></i>
@@ -186,7 +186,7 @@
         <i class="fa fa-circle-o text-red"></i>
         <span class="page"> 404</span>
       </a>
-    </router-link>
+    </router-link> -->
   </ul>
 </template>
 <script>
