@@ -105,10 +105,12 @@ export default {
       evt.preventDefault()
       // alert(JSON.stringify(this.form))
       // var res = api.addMahasiswa(this.form)
+      this.$store.dispatch('resetMahasiswaToAdd')
       console.log('================')
       await api.addMahasiswa(this.form).then((data) => {
-        console.log(data)
-        this.$store.dispatch('changeMahasiswaId', data._id)
+        console.log(data.data.addMahasiswa._id)
+        this.$store.dispatch('changeMahasiswaId', data.data.addMahasiswa._id)
+        console.log('jdsljf')
         this.$router.push({name: 'Data Siswa'})
       })
     },

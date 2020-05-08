@@ -35,7 +35,7 @@
                         </thead>
                         <tbody>
                           <tr class="even" role="row" v-for='jadwal in filteredJadwals' :key='jadwal.nama' v-on:click='changeJadwalId(jadwal._id)'>
-                            <td class="gambar"><img style="border-radius: 50%; height: 50px;" src="\static\img\stock\user1-128x128.jpg" alt="foto" /></td>
+                            <td class="gambar"><img style="border-radius: 50%; height: 50px;" v-bind:src="image(jadwal.pelajaran.female)" alt="foto" /></td>
                             <td class="sorting_1">{{jadwal.tanggal}}</td>
                             <td>{{jadwal.nama}}</td>
                             <td>{{jadwal.pelajaran.nama}}</td>
@@ -99,6 +99,13 @@ export default {
       this.$store.dispatch('changeJadwalId', id)
       this.$router.push({ name: 'Data Jadwal' })
       console.log(id)
+    },
+    image (female) {
+      if (female) {
+        return '../../../static/img/stock/user2-128x128.jpg'
+      } else {
+        return '../../../static/img/stock/user1-128x128.jpg'
+      }
     }
   }
 }

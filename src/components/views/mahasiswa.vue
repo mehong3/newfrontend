@@ -32,7 +32,7 @@
                       </thead>
                       <tbody>
                         <tr class="even" role="row" v-for='mahasiswa in filteredMahasiswa' :key='mahasiswa.nama' v-on:click='changeMahasiswaId(mahasiswa._id)'>
-                            <td class="gambar"><img style="border-radius: 50%; height: 50px;" src="\static\img\stock\user1-128x128.jpg" alt="foto" /></td>
+                            <td class="gambar"><img style="border-radius: 50%; height: 50px;" v-bind:src="image(mahasiswa.gender)" alt="foto" /></td>
                             <td class="sorting_1">{{mahasiswa.nama}}</td>
                             <td>{{mahasiswa.gender ? 'Perempuan' : 'Laki-laki'}}</td>
                             <td>{{mahasiswa.nim}}</td>
@@ -94,6 +94,13 @@ export default {
       this.$store.dispatch('changeMahasiswaId', id)
       this.$router.push({ name: 'Data Siswa' })
       console.log(id)
+    },
+    image (female) {
+      if (female) {
+        return '../../../static/img/stock/user2-128x128.jpg'
+      } else {
+        return '../../../static/img/stock/user1-128x128.jpg'
+      }
     }
   }
 }

@@ -107,13 +107,17 @@ export default {
         /* console.log(this.mahasiswas) */
       })
     },
-    submit () {
+    async submit () {
       if (this.checkInside() === false) {
         this.pelajaran.mahasiswas = this.mahasiswaIdToAdd
-        var res = api.addPelajaran(this.pelajaran)
-        console.log(res)
+
         this.$store.dispatch('resetPelajaranToAdd')
-        this.$router.push({ name: 'Pelajaran Finish' })
+
+        await api.addPelajaran(this.pelajaran).then((data) => {
+          console.log(data)
+          this.$store.dispatch('changePelajaranId', data.data.addPelajaran._id)
+          this.$router.push({ name: 'Data Pelajaran' })
+        })
       }
     }
   },

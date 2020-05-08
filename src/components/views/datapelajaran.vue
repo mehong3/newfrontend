@@ -5,7 +5,7 @@
           <div class="box">
           <div id="box-grid">
             <div class="info-siswa">
-              <img src="/static//img//stock/user2-128x128.jpg" id="img-siswa"/>
+              <img v-bind:src="image" id="img-siswa"/>
               <div class="text-siswa">
                 <p>{{pelajaranId.nama}}</p>
                 <p style="font-weight: 400; font-size: 1.2vw;">{{pelajaranId.guru}}</p>
@@ -83,14 +83,15 @@ export default {
       // console.log(res.data.pelajaran)
       this.pelajaranId = res.data.pelajaran
       /* console.log(this.pelajaran) */
-      console.log(this.data.mahasiswas)
+      // console.log(this.data.mahasiswas)
     })
   },
   data() {
     return {
       jadwals: [],
       pelajaranId: [],
-      mahasiswas: []
+      mahasiswas: [],
+      image: '/static//img//stock/user2-128x128.jpg'
     }
   },
   methods: {

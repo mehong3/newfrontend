@@ -31,7 +31,8 @@
 
                 <b-form-group id="input-group-3" label="Jenis Kelamin:" label-for="input-3">
                   <b-form-checkbox v-model="form.female" name="check-button" switch>
-                   <b>{{form.female?'Perempuan':'Laki-laki'}}</b>
+                   <b>{{form.female ? 'Perempuan':'Laki-laki'}}</b>
+                   <!-- <b>{{form.female}}</b> -->
                   </b-form-checkbox>
                 </b-form-group>
 

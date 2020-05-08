@@ -121,7 +121,7 @@ export default {
       nama: "${data.nama}",
       guru: "${data.guru}",
       female: ${data.female},
-      mahasiswas: ${mahasiswas}){ nama guru female}}`
+      mahasiswas: ${mahasiswas}){ _id nama guru female}}`
     return this.execute(queryType.MUTATION, mutation)
   },
   getPelajaranById (_id) {
@@ -160,6 +160,7 @@ export default {
         tempat
         pelajaran {
           nama
+          female
         }
       }
     }`
@@ -197,7 +198,7 @@ export default {
     selesai: "${data.selesai}",
     tempat: "${data.tempat}",
     pelajaran: "${data.pelajaran}",
-    mahasiswas: ${mahasiswas}){ nama tanggal mulai selesai tempat pelajaran { nama } mahasiswas{ nama }}}`
+    mahasiswas: ${mahasiswas}){ _id nama tanggal mulai selesai tempat pelajaran { nama } mahasiswas{ nama }}}`
     return this.execute(queryType.MUTATION, mutation)
   }
 }

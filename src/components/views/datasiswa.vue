@@ -69,11 +69,11 @@ require('datatables.net-bs')
 
 export default {
   name: 'Finish',
-  computed: {
-    mahasiswaId: function () {
-      return this.$store.state.mahasiswaId
-    }
-  },
+  // computed: {
+  //   mahasiswaId: function () {
+  //     return this.$store.state.mahasiswaId
+  //   }
+  // },
   mounted() {
     this.$nextTick(() => {
       $('#example1').DataTable()

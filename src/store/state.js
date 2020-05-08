@@ -3,7 +3,7 @@ export default {
   mahasiswaId: '',
   pelajaranId: '',
   jadwalId: '',
-  pelajaranToAdd: {},
+  pelajaranToAdd: { female: false },
   jadwalToAdd: {},
   searching: '',
   serverURI: 'http://10.110.1.136:8080',

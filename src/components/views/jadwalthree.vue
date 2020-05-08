@@ -73,14 +73,16 @@ export default {
     }
   },
   methods: {
-    onSubmit(evt) {
+    async onSubmit(evt) {
       evt.preventDefault()
+      this.$store.dispatch('resetJadwalToAdd')
       // alert(JSON.stringify(this.form))
       console.log(this.form)
-      var res = api.addJadwal(this.form)
-      console.log(res)
-      this.$router.push({ name: 'Jadwal Finish' })
-      // window.location.href = '/jadwalfinish'
+      await api.addJadwal(this.form).then((data) => {
+        console.log(data)
+        this.$store.dispatch('changeJadwalId', data.data.addJadwal._id)
+        this.$router.push({ name: 'Data Jadwal' })
+      })
     },
     onReset(evt) {
       evt.preventDefault()
