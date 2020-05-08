@@ -32,7 +32,7 @@
                       </thead>
                       <tbody>
                         <tr class="even" role="row" v-for='pelajaran in filteredPelajarans' :key='pelajaran.nama' v-on:click='changePelajaranId(pelajaran._id)'>
-                          <td class="gambar"><img style="border-radius: 50%; height: 50px;" src="\static\img\stock\user1-128x128.jpg" alt="foto" /></td>
+                          <td class="gambar"><img style="border-radius: 50%; height: 50px;" v-bind:src="imagePelajaran(pelajaran.female)" alt="foto" /></td>
                           <td>{{pelajaran.nama}}</td>
                           <td>{{pelajaran.guru}}</td>
                           <td>{{pelajaran.female ? 'Perempuan' : 'Laki-laki'}}</td>
@@ -88,6 +88,13 @@ export default {
       this.$store.dispatch('changePelajaranId', id)
       this.$router.push({ name: 'Data Pelajaran' })
       /* console.log(id) */
+    },
+    imagePelajaran: function (female) {
+      if (female) {
+        return '../../../static/img/stock/user2-128x128.jpg'
+      } else {
+        return '../../../static/img/stock/user1-128x128.jpg'
+      }
     }
   }
 }
