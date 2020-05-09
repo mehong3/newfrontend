@@ -98,6 +98,10 @@ export default {
           mulai
           selesai
           tempat
+          pelajaran {
+            nama
+            guru
+          }
         }
       }
     }`

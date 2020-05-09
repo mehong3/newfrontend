@@ -8,7 +8,7 @@
             <h3 class="box-title">Tabel Data Pelajaran</h3>
           </div>
           <!-- /.box-header -->
-          <div class="box-body">
+          <!-- <div class="box-body">
             <div class="dataTables_wrapper form-inline dt-bootstrap" id="example1_wrapper">
               <div class="row">
                 <div class="col-sm-6">
@@ -42,8 +42,8 @@
                 </div>
               </div>
             </div>
-            <!-- /.box-body -->
-          </div>
+            /.box-body
+          </div> -->
         </div>
       </div>
     </div>

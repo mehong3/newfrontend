@@ -16,7 +16,7 @@
                   <!-- Kartu Jadwal -->
                   <b-tab title="Jadwal" active button-id="tab1">
                     <b-card-text id="scroll">
-                      <b-card-group deck="">
+                      <!-- <b-card-group deck="">
                        <b-card @click="changeJadwalId(jadwal._id)"
                         v-for="jadwal in mahasiswaId.jadwals" :key="jadwal.data"
                         :header="jadwal.nama"
@@ -29,7 +29,53 @@
                           Tanggal {{jadwal.tanggal}} <br> Pukul {{jadwal.mulai}}-{{jadwal.selesai}} <br>
                         </b-card-text>
                       </b-card> 
-                      </b-card-group>
+                      </b-card-group> -->
+
+                      <!-- Calendar -->
+                      <div class="calendar_plan">
+                        <div class="cl_plan_date">
+                          <!-- <div class="cl_title">Today</div> -->
+                          <div class="cl_copy">22nd  April  2018</div>
+                        </div>
+                      </div>
+                      
+                      <h1>Upcoming Events</h1>
+
+                      <div class="calendar_plan" v-for="jadwal in mahasiswaId.jadwals" :key="jadwal.data">
+                        <div class="cl_plan_item">
+                          <!-- <div class="cl_title">Today</div> -->
+                          <div class="cl_copy">{{jadwal.mulai}}</div>
+                          <div class="cl_title">{{jadwal.pelajaran.nama}}: {{jadwal.nama}}</div>
+                          <!-- <div class="cl_title">{{jadwal.nama}}</div> -->
+                          <div class="cl_title">{{jadwal.pelajaran.guru}}</div>
+                          <!-- <div class="cl_title">{{jadwal.mulai}}-{{jadwal.selesai}}</div> -->
+                        </div>
+                      </div>
+
+                      <h1>Done Events</h1>
+
+                      <div class="calendar_plan">
+                        <div class="cl_plan_done">
+                          <!-- <div class="cl_title">Today</div> -->
+                          <div class="cl_copy">10:00</div>
+                          <div class="cl_title">Biologi: Sistem Pencernaan</div>
+                          <!-- <div class="cl_title">{{jadwal.nama}}</div> -->
+                          <div class="cl_title">Caroline Bogi</div>
+                          <!-- <div class="cl_title">{{jadwal.mulai}}-{{jadwal.selesai}}</div> -->
+                        </div>
+                      </div>
+
+                      <div class="calendar_plan">
+                        <div class="cl_plan_skip">
+                          <!-- <div class="cl_title">Today</div> -->
+                          <div class="cl_copy">08:00</div>
+                          <div class="cl_title">Kimia: Buffer</div>
+                          <!-- <div class="cl_title">{{jadwal.nama}}</div> -->
+                          <div class="cl_title">Theresa Wiwik</div>
+                          <!-- <div class="cl_title">{{jadwal.mulai}}-{{jadwal.selesai}}</div> -->
+                        </div>
+                      </div>
+
                     </b-card-text>
                   </b-tab>
 
@@ -50,6 +96,9 @@
                         </b-card-text>
                       </b-card>
                       </b-card-group>
+
+                      
+
                     </b-card-text>
                   </b-tab>
                 </b-tabs>
@@ -145,6 +194,161 @@ table.dataTable thead .sorting_desc:after {
 
 button {
   width: 10%;
+}
+
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  background-color: #fafafa;
+}
+
+.container{
+  margin:100px auto;
+  width:809px;
+}
+
+.light{
+  background-color: #fff;
+}
+.dark{
+  margin-left: 65px;
+}
+
+.calendar{
+  width:370px;
+  box-shadow: 0px 0px 35px -16px rgba(0,0,0,0.75);
+  /* font-family: 'Roboto', sans-serif; */
+  padding: 20px 30px;
+  color:#363b41;
+  display: inline-block;
+}
+
+.calendar_header{
+  border-bottom: 2px solid rgba(0, 0, 0, 0.08);
+}
+
+.header_copy{
+  color:#A39D9E;
+  font-size:20px;
+}
+.calendar_plan{
+  margin:5%;
+  margin-left: 0;
+}
+.cl_plan_date{
+  width:100%;
+  /* height: 120px; */
+  background-image: linear-gradient(-222deg,#295fd4 , rgb(20, 59, 131));
+  /* box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75); */
+  padding:30px;
+  color:#fff;
+  border-radius: 20px;
+}
+.cl_plan_item{
+  width:100%;
+  /* height: 120px; */
+  background-image: linear-gradient(-222deg,#838485 , rgb(59, 59, 59));
+  /* box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75); */
+  padding:30px;
+  color:#fff;
+  border-radius: 20px;
+}
+.cl_plan_done{
+  width:100%;
+  /* height: 120px; */
+  background-image: linear-gradient(-222deg,#0dc50d , rgb(6, 122, 11));
+  /* box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75); */
+  padding:30px;
+  color:#fff;
+  border-radius: 20px;
+}
+.cl_plan_skip{
+  width:100%;
+  /* height: 120px; */
+  background-image: linear-gradient(-222deg,#ca0303 , rgb(141, 0, 0));
+  /* box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75); */
+  padding:30px;
+  color:#fff;
+  border-radius: 20px;
+}
+.cl_title{
+  font-size:15px;
+}
+.cl_copy{
+  font-size:30px;
+  /* margin: 20px 0; */
+  display: inline-block;
+}
+
+.cl_add{
+  display: inline-block;
+  width: 40px;
+  height:40px;
+  border-radius:50%;
+  background-color: #fff;
+  cursor: pointer;
+  margin:0 0 0 65px;
+  color:#c2c2c2;
+  padding: 11px 13px;
+}
+.calendar_events{
+  color:#A39D9E;
+}
+.ce_title{
+  font-size:14px;
+}
+
+.event_item{
+  margin: 18px 0;
+  padding:5px;
+  cursor: pointer;
+  &:hover{
+    background-image: linear-gradient(-222deg, #FF8494, #ffa9b7);
+    box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
+    .ei_Dot{
+      background-color: #fff;
+    }
+    .ei_Copy,.ei_Title{
+      color:#fff;
+    }
+  }
+}
+
+.ei_Dot,.ei_Title{
+  display:inline-block;
+}
+
+.ei_Dot{
+  border-radius:50%;
+  width:10px;
+  height: 10px;
+  background-color: #A39D9E;
+  box-shadow: 0px 0px 52px -18px rgba(0, 0, 0, 0.75);
+}
+.dot_active{
+  background-color: #FF8494;
+}
+
+.ei_Title{
+  margin-left:10px;
+  color:#363b41;
+}
+
+.ei_Copy{
+  font-size:12px;
+  margin-left:27px;
+}
+
+.dark{
+  background-image: linear-gradient(-222deg, #646464, #454545);
+  color:#fff;
+  .header_title,.ei_Title,.ce_title{
+    color:#fff;
+  }
+  
 }
 
 #box-grid{
